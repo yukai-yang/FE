@@ -1,0 +1,11 @@
+Package: FE
+Type: Package
+Title: Financial Econometrics
+Version: 1.0.0
+Authors@R: person("Yukai", "Yang", email = "yukai.yang@statistik.uu.se",role = c("aut", "cre"))
+Description: Provides data and R code materials for the master course Financial Econometrics.
+    The course is for the second year master students and PhD students.
+Depends: R (>= 3.0.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
