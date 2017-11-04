@@ -7,7 +7,7 @@ This package is developed for the students who attend the master and PhD course 
 You install the package by running
 
 ``` r
-if(!require(devtools)) install("devtools")
+if(!require(devtools)) install.packages("devtools")
 devtools::install_github("yukai-yang/FE")
 ```
 
