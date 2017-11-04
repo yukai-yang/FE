@@ -1,0 +1,37 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# FE version 1.0.0
+
+This package is developed for the students who attend the master and PhD course "Financial Econometrics". It facilitates the downloading and manipulation of the data sets used in the course.
+
+You install the package by running
+
+```{r install}
+if(!require(devtools)) install("devtools")
+devtools::install_github("yukai-yang/FE")
+```
+
+and attach the package by running
+
+```{r attach}
+library("FE")
+```
+
+You can take a look at all the available data sets and functions in the package
+```{r contents}
+ls( grep("FE", search()) ) 
+```

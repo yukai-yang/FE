@@ -1,11 +1,13 @@
 Package: FE
-Type: Package
-Title: Financial Econometrics
+Title: Data Sets and Functions for the Course "Financial Econometrics"
 Version: 1.0.0
-Authors@R: person("Yukai", "Yang", email = "yukai.yang@statistik.uu.se",role = c("aut", "cre"))
-Description: Provides data and R code materials for the master course Financial Econometrics.
-    The course is for the second year master students and PhD students.
+Authors@R: person("Yukai", "Yang", email = "yukai.yang@statistik.uu.se", role = c("aut", "cre"))
+Description: Provides all the data sets and functions used in the master and PhD course "Financial Econometrics".
 Depends: R (>= 3.0.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/yukai-yang/FE
+BugReports: https://github.com/yukai-yang/FE/issues
+RoxygenNote: 6.0.1
+Imports: tibble
