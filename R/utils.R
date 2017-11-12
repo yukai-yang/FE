@@ -8,7 +8,7 @@
 ## utility functions
 #################################################################################
 
-vnum = "1.0.0"
+vnum = "1.1.0"
 location = "GitHub"
 
 # simple cat
@@ -29,5 +29,5 @@ cat0 <- function(...)
 #'
 #' @export
 version <- function(){
-  cat0("Financial Econometrics version ", vnum, " from ",location)
+  cat0("Financial Econometrics Data Sets and Functions, version ", vnum, " from ",location)
 }
