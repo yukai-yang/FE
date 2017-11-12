@@ -14,7 +14,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-# New Featurs in FE 1.0.0
+# New Features in FE 1.1.0
+
+* Implement some functions for CAPM models.
+
+# New Features in FE 1.0.0
 
 * Data sets: DJ_d, DJ_w, index_d, and portcap_m
 * Documetation including README, NEWS, LICENSE and etc.
