@@ -82,3 +82,58 @@
 #'
 #' @format A tibble with 942 rows and 21 variables:
 "portcap_m"
+
+
+#' Value-weighted returns for portfolios
+#'
+#' Value-weighted returns for 10 size decile portfolios,
+#' 10 book-to-market decile portfolios
+#' as well as 100 size/book-to-market (ME-BE/ME) portfolios based on stocks traded at the NYSE and AMEX.
+#'
+#' The portfolios are reconstructed every June.
+#'
+#' The 100 ME-BE/ME portfolios are constructed based on the intersections of 10 size deciles 10 BE/ME deciles.
+#'
+#' Moreover, it includes the value-weighted return on all NYSE, AMEX, and NASDAQ stocks (from CRSP) as a proxy for the market as well as the one-month Treasury bill rate.
+#'
+#' Note that all returns are measured in percent!
+#'
+#' 942 monthly observations, 07/1926-12/2004.
+#'
+#' \itemize{
+#'   \item year, year in integers.
+#'   \item month, month in integers
+#'   \item Market, value-weighted return on all NYSE, AMEX, and NASDAQ stocks (from CRSP) as a proxy for the market return.
+#'   \item Tbill, one-month Treasury bill rate.
+#'   \item MEx, portfolio returns for the x_th size decile.
+#'   \item MEBEx, portfolio returns for the x_th book-to-market decile.
+#'   \item Rx(x)y(y), portfolio returns for the x(x)/y(y) size/book-to-market percentile.
+#' }
+#'
+#' @format A tibble with 942 rows and 124 variables:
+"portfolio_m"
+
+
+#' SMB and HML factor as constructed by Fama and French (1993).
+#'
+#' SMB is the difference between the returns on a small-stock portfolio (based on the low 30% quantile of market capitalization) and the returns on a big-stock portfolio (based on the top 30% quantile of market capitalization).
+#'
+#' HML is the difference between the returns on a low-book-to-market portfolio (based on the low 30% quantile of the book-to-market equity ratio) and the returns on a high-book-to-market portfolio (based on the top 30% quantile of the book-to-market equity ratio).
+#'
+#' Moreover, it includes the value-weighted return on all NYSE, AMEX, and NASDAQ stocks (from CRSP) as a proxy for the market as well as the one-month Treasury bill rate.
+#'
+#' Note that all returns are measured in percent!
+#'
+#' 942 monthly observations, 07/1926-12/2004.
+#'
+#' \itemize{
+#'   \item year, year in integers.
+#'   \item month, month in integers
+#'   \item Market, value-weighted return on all NYSE, AMEX, and NASDAQ stocks (from CRSP) as a proxy for the market return.
+#'   \item Tbill, one-month Treasury bill rate.
+#'   \item SMB, difference between the returns on a small-stock portfolio (based on the low 30% quantile of market capitalization) and the returns on a big-stock portfolio (based on the top 30% quantile of market capitalization).
+#'   \item HML, difference between the returns on a low-book-to-market portfolio (based on the low 30% quantile of the book-to-market equity ratio) and the returns on a high-book-to-market portfolio (based on the top 30% quantile of the book-to-market equity ratio).
+#' }
+#'
+#' @format A tibble with 942 rows and 6 variables:
+"factors_m"

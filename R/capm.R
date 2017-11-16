@@ -150,3 +150,101 @@ SharpeLintner <- function(mu, Omega, rf, mu_p=NULL)
 
   return(ret)
 }
+
+#' Estimate the CAPM model
+#'
+#' This function estimates the Sharpe-Lintner CAPM model as follows:
+#' \deqn{Z_t = \alpha + \beta Z_{mt} + \varepsilon_t.}
+#' where \eqn{Z_t} is the excess returns for N assets,
+#' \eqn{Z_{mt}} is the excess return of the market portfolio.
+#'
+#' @param mZ matrix of the excess returns for N assets with dimension T by N.
+#' @param vZm vector of the excess returns of the market portfolio.
+#'
+#' @return a list containing the following results:
+#' \item{alpha}{estimated alpha.}
+#' \item{beta}{estimated market beta.}
+#' \item{mE}{matrix of the residuals.}
+#' \item{Sigma}{estimated covariance matrix of the errors.}
+#'
+#' @author Yukai Yang, \email{yukai.yang@@statistik.uu.se}
+#' @keywords capm
+#'
+#' @examples
+#' mR = portfolio_m[,25:124]
+#' vRm = portfolio_m[,3]
+#' vRf = portfolio_m[,4]
+#'
+#' mZ = mR - c(vRf)
+#' vZm = vRm - c(vRf)
+#'
+#' ret = EstCAPM(mZ, vZm)
+#'
+#' @export
+EstCAPM <- function(mZ, vZm)
+{
+  ret = list()
+  mZ = as.matrix(mZ)
+
+  mX = as.matrix(cbind(1, vZm))
+  tmp = chol2inv(chol(crossprod(mX))) %*% crossprod(mX,mZ)
+
+  ret$alpha = tmp[1,]
+  ret$beta = tmp[2,]
+  ret$mE = mZ - mX%*%tmp
+  ret$Sigma = crossprod(ret$mE)/nrow(ret$mE)
+
+  return(ret)
+}
+
+
+#' Implement the Fama-MacBeth two-step cross-sectional regressions
+#'
+#' This function Implement the Fama-MacBeth two-step cross-sectional regressions.
+#'
+#' The first pass has been described in \code{\link{EstCAPM}}.
+#'
+#' The second pass are the regressions
+#' \deqn{Z_t = \gamma_{0t} \iota + \gamma_{1t} \hat{\beta} + \eta_t}
+#' for each time period \eqn{t}, where \eqn{\hat{\beta}} is the estimated beta from the first pass,
+#' and \eqn{\gamma_{1t}} is the market risk premium.
+#'
+#' @param mZ matrix of the excess returns for N assets with dimension T by N.
+#' @param vZm vector of the excess returns for the market portfolio.
+#'
+#' @return a list containing the following results:
+#' \item{alpha}{estimated alpha.}
+#' \item{beta}{estimated market beta.}
+#' \item{mE}{matrix of the residuals.}
+#' \item{Sigma}{estimated covariance matrix of the errors.}
+#' \item{gamma_0}{estimated intercepts in the second pass.}
+#' \item{gamma_1}{estimated risk premium in the second pass.}
+#'
+#' @author Yukai Yang, \email{yukai.yang@@statistik.uu.se}
+#' @keywords capm
+#'
+#' #' @examples
+#' mR = portfolio_m[,25:124]
+#' vRm = portfolio_m[,3]
+#' vRf = portfolio_m[,4]
+#'
+#' mZ = mR - c(vRf)
+#' vZm = vRm - c(vRf)
+#'
+#' ret = Fama_MacBeth(mZ, vZm)
+#'
+#' @export
+Fama_MacBeth <- function(mZ, vZm)
+{
+  ret = EstCAPM(mZ, vZm)
+
+  mX = cbind(1,ret$beta)
+  tmp = chol2inv(chol(crossprod(mX))) %*% t(mX)
+
+  tmpp = apply(mZ, 1, function(vy){c(tmp%*%vy)})
+  ret$gamma_0 = tmpp[1,]
+  ret$gamma_1 = tmpp[2,]
+
+  return(ret)
+
+}
