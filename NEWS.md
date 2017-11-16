@@ -3,7 +3,8 @@ New Features in FE 1.2.0
 ========================
 
 -   Data sets: portfolio\_m and factors\_m
--   Fama-MacBeth two-step (cross-sectional) regression for risk premium
+-   Implement the estimation of the Sharpe-Lintner CAPM model
+-   Fama-MacBeth two-step (cross-sectional) regression for risk premium.
 
 New Features in FE 1.1.0
 ========================
