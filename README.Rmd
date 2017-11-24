@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# FE version 1.2.0
+# FE version 1.2.1
 
 This package is developed for the students who attend the master and PhD course "Financial Econometrics". It facilitates the downloading and manipulation of the data sets used in the course.
 

@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-FE version 1.2.0
+FE version 1.2.1
 ================
 
 This package is developed for the students who attend the master and PhD course "Financial Econometrics". It facilitates the downloading and manipulation of the data sets used in the course.
@@ -23,6 +23,7 @@ You can take a look at all the available data sets and functions in the package
 ls( grep("FE", search()) ) 
 #>  [1] "betas"            "DJ_d"             "DJ_w"            
 #>  [4] "EstCAPM"          "factors_m"        "Fama_MacBeth"    
-#>  [7] "index_d"          "minvar_portfolio" "portcap_m"       
-#> [10] "portfolio_m"      "SharpeLintner"    "version"
+#>  [7] "index_d"          "minvar_portfolio" "PCA"             
+#> [10] "portcap_m"        "portfolio_m"      "SharpeLintner"   
+#> [13] "version"
 ```
