@@ -2,6 +2,7 @@
 
 export(EstCAPM)
 export(Fama_MacBeth)
+export(PCA)
 export(SharpeLintner)
 export(betas)
 export(minvar_portfolio)

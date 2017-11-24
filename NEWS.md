@@ -1,4 +1,9 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+New Features in FE 1.2.1
+========================
+
+-   Princinpal Component method
+
 New Features in FE 1.2.0
 ========================
 

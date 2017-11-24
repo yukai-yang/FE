@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+# New Features in FE 1.2.1
+
+* Princinpal Component method
+
 # New Features in FE 1.2.0
 
 * Data sets: portfolio_m and factors_m
