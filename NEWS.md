@@ -1,4 +1,9 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+New Features in FE 1.2.2
+========================
+
+-   Implement a function computing the log-likelihood function based on residuals.
+
 New Features in FE 1.2.1
 ========================
 

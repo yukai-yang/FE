@@ -2,6 +2,7 @@
 
 export(EstCAPM)
 export(Fama_MacBeth)
+export(LogLikelihood)
 export(PCA)
 export(SharpeLintner)
 export(betas)
